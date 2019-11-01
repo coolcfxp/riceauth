@@ -1,4 +1,4 @@
-package com.ricequant.riceauth.core;
+package com.ricequant.riceauth.core.api;
 
 import java.util.List;
 

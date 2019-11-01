@@ -1,5 +1,5 @@
-package com.ricequant.riceauth.core;
+package com.ricequant.riceauth.core.api;
 
-public interface AuthSource {
+public interface UserDirectory {
 
 }

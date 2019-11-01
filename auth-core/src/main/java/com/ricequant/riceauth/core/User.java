@@ -1,5 +1,7 @@
 package com.ricequant.riceauth.core;
 
+import com.ricequant.riceauth.core.api.AuthEntityNode;
+
 import java.util.ArrayList;
 import java.util.List;
 

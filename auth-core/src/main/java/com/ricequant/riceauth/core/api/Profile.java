@@ -1,4 +1,4 @@
-package com.ricequant.riceauth.core;
+package com.ricequant.riceauth.core.api;
 
 import org.apache.commons.lang3.tuple.Pair;
 

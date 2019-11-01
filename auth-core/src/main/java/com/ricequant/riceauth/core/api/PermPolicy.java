@@ -1,4 +1,4 @@
-package com.ricequant.riceauth.core;
+package com.ricequant.riceauth.core.api;
 
 public enum PermPolicy {
   Allow, Deny
