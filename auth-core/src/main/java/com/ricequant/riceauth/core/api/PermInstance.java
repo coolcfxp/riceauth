@@ -6,5 +6,5 @@ public interface PermInstance {
 
   PermPolicy policy();
 
-  AuthEntityNode user();
+  User user();
 }

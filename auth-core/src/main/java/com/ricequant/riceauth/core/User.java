@@ -1,23 +1,21 @@
 package com.ricequant.riceauth.core;
 
-import com.ricequant.riceauth.core.api.AuthEntityNode;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class User implements AuthEntityNode {
+public class User implements com.ricequant.riceauth.core.api.User {
 
-  private long id;
+  private String id;
 
   private String name;
 
-  private List<AuthEntityNode> children = new ArrayList<>();
+  private List<com.ricequant.riceauth.core.api.User> children = new ArrayList<>();
 
-  public long id() {
+  public String id() {
     return this.id;
   }
 
-  public User id(long id) {
+  public User id(String id) {
     this.id = id;
     return this;
   }
@@ -32,27 +30,27 @@ public class User implements AuthEntityNode {
   }
 
   @Override
-  public AuthEntityNode appendAuthables(AuthEntityNode... nodes) {
-    for (AuthEntityNode node : nodes)
+  public com.ricequant.riceauth.core.api.User appendUser(com.ricequant.riceauth.core.api.User... user) {
+    for (com.ricequant.riceauth.core.api.User node : user)
       children.add(node);
     return this;
   }
 
   @Override
-  public AuthEntityNode clearChildren() {
+  public com.ricequant.riceauth.core.api.User clearChildren() {
     children.clear();
     return this;
   }
 
   @Override
-  public AuthEntityNode replaceChildren(AuthEntityNode... nodes) {
+  public com.ricequant.riceauth.core.api.User replaceChildren(com.ricequant.riceauth.core.api.User... nodes) {
     children.clear();
-    appendAuthables(nodes);
+    appendUser(nodes);
     return this;
   }
 
   @Override
-  public List<? extends AuthEntityNode> children() {
+  public List<? extends com.ricequant.riceauth.core.api.User> children() {
     return new ArrayList<>(children);
   }
 
