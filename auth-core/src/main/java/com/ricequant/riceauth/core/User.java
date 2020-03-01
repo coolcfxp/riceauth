@@ -37,20 +37,20 @@ public class User implements com.ricequant.riceauth.core.api.User {
   }
 
   @Override
-  public com.ricequant.riceauth.core.api.User clearChildren() {
+  public com.ricequant.riceauth.core.api.User clearUsers() {
     children.clear();
     return this;
   }
 
   @Override
-  public com.ricequant.riceauth.core.api.User replaceChildren(com.ricequant.riceauth.core.api.User... nodes) {
+  public com.ricequant.riceauth.core.api.User replaceUsers(com.ricequant.riceauth.core.api.User... nodes) {
     children.clear();
     appendUser(nodes);
     return this;
   }
 
   @Override
-  public List<? extends com.ricequant.riceauth.core.api.User> children() {
+  public List<? extends com.ricequant.riceauth.core.api.User> users() {
     return new ArrayList<>(children);
   }
 

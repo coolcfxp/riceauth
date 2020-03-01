@@ -14,10 +14,10 @@ public interface User {
 
   User appendUser(User... user);
 
-  User clearChildren();
+  User clearUsers();
 
-  User replaceChildren(User... user);
+  User replaceUsers(User... user);
 
-  List<? extends User> children();
+  List<? extends User> users();
 
 }
