@@ -6,18 +6,18 @@ import java.util.Set;
 
 public interface Profile {
 
-  Set<User> users();
+  Set<UserEntity> users();
 
-  Set<User> users(Set<PermItem> perms);
+  Set<UserEntity> users(Set<PermItem> perms);
 
-  Set<PermItem> perms(Set<User> users);
+  Set<PermItem> perms(Set<UserEntity> users);
 
   Profile addPerms(PermItem... perm);
 
   // default scheme is inherit
-  Set<Pair<User, PermItem>> associate(User user, PermItem perm, PermPolicy policy);
+  Set<Pair<UserEntity, PermItem>> associate(UserEntity user, PermItem perm, PermPolicy policy);
 
-  Set<Pair<User, PermItem>> associate(User user, PermItem perm, PermPolicy policy,
+  Set<Pair<UserEntity, PermItem>> associate(UserEntity user, PermItem perm, PermPolicy policy,
           PopulatingScheme popScheme);
 
 

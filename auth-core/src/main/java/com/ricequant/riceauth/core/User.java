@@ -1,15 +1,17 @@
 package com.ricequant.riceauth.core;
 
+import com.ricequant.riceauth.core.api.UserEntity;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class User implements com.ricequant.riceauth.core.api.User {
+public class User implements UserEntity {
 
   private String id;
 
   private String name;
 
-  private List<com.ricequant.riceauth.core.api.User> children = new ArrayList<>();
+  private List<UserEntity> children = new ArrayList<>();
 
   public String id() {
     return this.id;
@@ -30,28 +32,33 @@ public class User implements com.ricequant.riceauth.core.api.User {
   }
 
   @Override
-  public com.ricequant.riceauth.core.api.User appendUser(com.ricequant.riceauth.core.api.User... user) {
-    for (com.ricequant.riceauth.core.api.User node : user)
+  public UserEntity appendSubUser(UserEntity... user) {
+    for (UserEntity node : user)
       children.add(node);
     return this;
   }
 
   @Override
-  public com.ricequant.riceauth.core.api.User clearUsers() {
+  public UserEntity clearSubUsers() {
     children.clear();
     return this;
   }
 
   @Override
-  public com.ricequant.riceauth.core.api.User replaceUsers(com.ricequant.riceauth.core.api.User... nodes) {
+  public UserEntity replaceSubUsers(UserEntity... users) {
     children.clear();
-    appendUser(nodes);
+    appendSubUser(users);
     return this;
   }
 
   @Override
-  public List<? extends com.ricequant.riceauth.core.api.User> users() {
+  public List<? extends UserEntity> subUsers() {
     return new ArrayList<>(children);
+  }
+
+  @Override
+  public boolean hasSubUsers() {
+    return children.size() > 0;
   }
 
 }
